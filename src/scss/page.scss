@@ -19,7 +19,7 @@
   }
 
   &:before {
-    background: url('/img/earth_bg.png');
+    background: url('/img/page/earth_bg.png');
     background-size: 679px;
     background-position: -264px -32px;
     opacity: 0.3;
@@ -42,10 +42,37 @@
   grid-template-rows: 9.09vh auto auto auto auto auto;
   grid-template-areas:
       "alert"
-      "header"
+      "logo"
       "heart"
       "status"
       "tip"
       "footer"
   ;
+}
+
+.page__alert {
+  grid-area: alert;
+}
+
+.page__metaWalletLogo {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__heart {
+  grid-area: heart;
+}
+
+.page__status {
+  grid-area: status;
+}
+
+.page__tip {
+  grid-area: tip;
+}
+
+.page__footer {
+  grid-area: footer;
 }
