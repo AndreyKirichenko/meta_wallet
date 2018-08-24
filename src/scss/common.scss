@@ -1,9 +1,15 @@
 html, body {
   min-height: 100vh;
-  background-color: #050B1F;
+  background-color: #0a1c37;
   color: #fff;
 }
 
 body {
   font-family: 'Roboto', "Times New Roman", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
 }

@@ -1,0 +1,67 @@
+@keyframes alertAnimation {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(0);
+    height: 110%;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.alert {
+  height: 100%;
+  min-height: 40px;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: alertAnimation 0.5s 1 ease-in-out;
+}
+
+
+
+.alert--useful {
+  background-color: #99CEFF;
+}
+
+.alert--warning {
+  background-color: #FB5E5B;
+}
+
+.alert__content {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  align-items: center;
+}
+
+.alert__icon {
+  .alert--useful & {
+    width: 15px;
+    height: 13px;
+    margin-right: 10px;
+    background: url('/img/alert/useful_tips_icon.svg');
+    transform: translateY(-1px);
+  }
+
+  .alert--warning & {
+    width: 13.76px;
+    height: 17.75px;
+    margin-right: 11px;
+    background: url('/img/alert/warning_icon.svg');
+    transform: translateY(-1px);
+  }
+}
+
+.alert__text {
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
