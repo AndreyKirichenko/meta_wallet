@@ -8,9 +8,9 @@ let conf = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'app.js',
-    publicPath: 'dist/'
   },
   devServer: {
+    contentBase: path.join(__dirname, './dist'),
     overlay: true
   },
   module: {
@@ -33,6 +33,16 @@ let conf = {
           'css-loader',
           'sass-loader'
         ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'dist/fonts/'
+          }
+        }]
       }
     ]
   },
@@ -42,13 +52,12 @@ let conf = {
     }),
     new HtmlWebpackPlugin({
       template : './src/pug/index.pug',
-      filename: '../index.html'
+      // filename: './dist/index.html'
     }),
     new CopyWebpackPlugin([
-      { from: 'src/img/', to: 'img/', force: true },
-      { from: 'src/fonts/', to: 'fonts/', force: true }
+      { from: 'src/img/', to: 'img/', force: true }
     ], {})
-  ],
+  ]
 };
 
 module.exports = (env, options) => {
