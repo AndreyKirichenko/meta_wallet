@@ -1,3 +1,77 @@
 .heart {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  width: 130px;
+  height: 130px;
+  align-self: center;
+}
 
+@keyframes heart--sheath {
+  0% {
+    transform: scale(0.955);
+  }
+
+  15% {
+    transform: scale(0.988);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.955);
+  }
+}
+
+@keyframes heart--wave {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  14% {
+    opacity: 0;
+  }
+
+  15% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  60% {
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: scale(1.33);
+    opacity: 0;
+  }
+}
+
+.heart__sheath,
+.heart__wave {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.heart__sheath {
+  border: 2px solid #fff;
+  animation: heart--sheath 1s infinite ease-in-out;
+  z-index: 1;
+}
+
+.heart__wave {
+  border: 2px solid #99CEFF;
+  opacity: 0;
+  z-index: 0;
+  animation: heart--wave 2s infinite ease-out;
+}
+
+.heart__wave--delay {
+  animation-delay: 1s;
 }

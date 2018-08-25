@@ -39,7 +39,7 @@
 }
 
 .page__container--loader {
-  grid-template-rows: 9.09vh auto auto auto auto auto;
+  grid-template-rows: 9.09vh auto minmax(130px, auto) auto auto auto;
   grid-template-areas:
       "alert"
       "logo"
@@ -63,6 +63,9 @@
 
 .page__heart {
   grid-area: heart;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .page__status {

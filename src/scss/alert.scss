@@ -1,4 +1,4 @@
-@keyframes alertAnimation {
+@keyframes alert--animation {
   0% {
     transform: translateY(-100%);
     opacity: 0;
@@ -22,7 +22,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  animation: alertAnimation 0.5s 1 ease-in-out;
+  animation: alert--animation 0.5s 1 ease-in-out;
 }
 
 .alert--useful {
